@@ -1,2 +1,2 @@
 # Réarrangeur de Noms, Capsules CT 7G
-Réarrangeur de noms pour les Pokémon aptes d'apprendre une capacité par CT pour les jeux de 7ème génération.
+Réarrangeur de noms pour les Pokémon aptes d'apprendre une capacité par CT pour les jeux de 7ème génération. Prenez les noms à ajouter au convertisseur depuis [le Pokédex Pokémon Showdown](https://dex.pokemonshowdown.com) (en ayant recherché la capacité CT voulue. Le site ne prend en charge que les dernières versions parues). Traduisez les noms depuis l'anglais, mettez-les dans la zone de texte supérieure. Faites attention à bien laisser un espace entre chaque nom pour que le convertisseur fonctionne correctement.
