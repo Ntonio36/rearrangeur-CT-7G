@@ -1,12 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Réarrangeur de Pokémon</title>
+<style>
+footer {
+	text-align : center;
+	font-size : 15px;
+	background-color : gray;
+}
+</style>
 </head>
 <body>
 Texte de base <textarea cols=70 rows=10 id="base"></textarea><br />
 Texte réarrangé <textarea cols=70 rows=10 id="result"></textarea>
+<br />
+<br />
+<br />
+<center>
+Tapez les noms des Pokémon aptes dans la zone de texte supérieure. Puis lorsque vous avez terminé, copiez le résultat de la zone de texte inférieure.
+</center>
+<footer>Copyright <a href="http://www.pokepedia.fr/Utilisateur:N_tonio36">N_tonio36</a> &copy; 2017-<span id="currentyear">2017</span> - Tous droits réservés.<br />
+<small><p style="text-align:right; padding-right:20px;"><a href="http://www.pokepedia.fr/Discussion_utilisateur:N_tonio36">Service après-vente</a> -- <a href="https://github.com/Ntonio36/rearrangeur-CT-7G">Répertoire GitHub</a></p></small></footer>
+<script>
+var currentYear = 1900 + new Date().getYear();
+document.getElementById("currentyear").innerHTML = currentYear;
+</script>
 <script src="./Database.js"></script>
 <script src="./Script.js"></script>
 </body>
