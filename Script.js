@@ -1,7 +1,7 @@
 document.getElementById("base").onkeyup = function(){
 	var PokémonText = this.value;
 	var alolanFlag = false;
-	PokémonText = PokémonText.replace(/\{\{Poké\|\d{1,3}/g,"");
+	PokémonText = PokémonText.replace(/\{\{Poké\|.{1,}\|/g,"");
 	PokémonText = PokémonText.replace(/\}\}/g,"");
 	var PokémonArray = PokémonText.split("\n");
 	var finalArray = [];		
