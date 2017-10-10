@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Réarrangeur de Pokémon</title>
+<script src="./jquery.min.js"></script>
 <style>
 footer {
 	text-align : center;
@@ -13,7 +14,7 @@ footer {
 </head>
 <body>
 Texte de base <textarea cols=70 rows=10 id="base"></textarea><br />
-Texte réarrangé <textarea readonly cols=70 rows=10 id="result"></textarea>
+Texte réarrangé <textarea cols=70 rows=10 id="result"></textarea>
 <br />
 <br />
 <br />
@@ -26,6 +27,7 @@ Tapez les noms des Pokémon aptes dans la zone de texte supérieure. Puis lorsqu
 var currentYear = 1900 + new Date().getYear();
 document.getElementById("currentyear").innerHTML = currentYear;
 </script>
+<script src="./méga-bdd.js"></script>
 <script src="./Script.js"></script>
 </body>
 </html>
