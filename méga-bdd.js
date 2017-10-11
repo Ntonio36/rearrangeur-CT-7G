@@ -221,7 +221,7 @@
 "Wobbuffet" : "Qulbutoké",
 "Girafarig" : "Girafarig",
 "Pineco" : "Pomdepik",
-"Forretress" : "Forretress",
+"Forretress" : "Foretress",
 "Dunsparce" : "Insolourdo",
 "Gligar" : "Scorplane",
 "Steelix" : "Steelix",
