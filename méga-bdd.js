@@ -1,4 +1,4 @@
-﻿var EnglishPokémon = {
+var EnglishPokémon = {
 "Bulbasaur" : "Bulbizarre",
 "Ivysaur" : "Herbizarre",
 "Venusaur" : "Florizarre",
@@ -26,6 +26,13 @@
 "Ekans" : "Abo",
 "Arbok" : "Arbok",
 "Pikachu" : "Pikachu",
+"Pikachu-Original" : "Pikachu forme Kanto",
+"Pikachu-Johto" : "Pikachu forme Johto",
+"Pikachu-Hoenn" : "Pikachu forme Hoenn",
+"Pikachu-Sinnoh" : "Pikachu forme Sinnoh",
+"Pikachu-Unova" : "Pikachu forme Unys",
+"Pikachu-Kalos" : "Pikachu forme Kalos",
+"Pikachu-Alola" : "Pikachu forme Alola",
 "Raichu" : "Raichu",
 "Raichu-Alola" : "Raichu forme Alola",
 "Sandshrew" : "Sabelette",
