@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Réarrangeur de Pokémon</title>
-<script src="./jquery.min.js"></script>
 <style>
 footer {
 	text-align : center;
@@ -16,6 +15,8 @@ footer {
 Texte de base <textarea cols=70 rows=10 id="base"></textarea><br />
 Texte réarrangé <textarea cols=70 rows=10 id="result"></textarea>
 <br />
+<tr><td><input id="convert" type="radio" name="usage" /> Convertisseur {{Poké|}}</td><td><input id="translate" type="radio" name="usage" /> Traducteur CT 7G</td><td><input type="radio" name="usage" id="none" /> Rien</td></tr><br />
+<button onclick="getWikicode()">Éplucher</button>
 <br />
 <br />
 <center>
