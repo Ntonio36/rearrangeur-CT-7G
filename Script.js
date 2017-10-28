@@ -37,9 +37,12 @@ function getWikicode(){
 				else continue;
 			}
 		}
-		finalArray = prepareArray.map(function(name){
-			return name != undefined;
-		});
+		for(i = 0; i < prepareArray.length; i++){
+			if(prepareArray[i] != undefined){
+				finalArray.push(prepareArray[i]);
+			}
+			else continue;
+		}
 	}
 	else if(usage === "none"){
 		finalArray = [];
