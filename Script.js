@@ -23,13 +23,9 @@ function getWikicode(){
 	}
 	else if (usage == "translate"){
 		var learnersList = input.split("\n");
-		var indexToRemove = learnersList.indexOf("TM/HM");
-		for(i = 0; i <= indexToRemove; i++){
-			learnersList.splice(i,1); 
-			// bug de c/c sur Pokémon Showdown qui emporte même les Pokémon qui apprennent la capa par montée de niveau, on ne veut pas ça
-			// Du coup on retire tous ceux qui l'apprennent en levelant, ne laissant que ceux qui apprennent la CT
+		while(learnersList.indexOf("TM/HM") != -1){
+			learnersList.splice(0,1);
 		}
-		
 		var PokémonList = Object.keys(EnglishPokémon);
 		for(x = 0; x < learnersList.length; x++){
 			var currentRow = learnersList[x];
@@ -41,12 +37,9 @@ function getWikicode(){
 				else continue;
 			}
 		}
-		for(i = 0; i < prepareArray.length; i++){
-			if(prepareArray[i] != undefined){
-				finalArray.push(prepareArray[i]);
-			}
-			else continue;
-		}
+		finalArray = prepareArray.map(function(name){
+			return name != undefined;
+		});
 	}
 	else if(usage === "none"){
 		finalArray = [];
