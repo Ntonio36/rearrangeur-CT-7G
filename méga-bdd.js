@@ -32,7 +32,6 @@ var EnglishPokémon = {
 "Pikachu-Sinnoh" : "Pikachu forme Sinnoh",
 "Pikachu-Unova" : "Pikachu forme Unys",
 "Pikachu-Kalos" : "Pikachu forme Kalos",
-"Pikachu-Alola" : "Pikachu forme Alola",
 "Raichu" : "Raichu",
 "Raichu-Alola" : "Raichu forme Alola",
 "Sandshrew" : "Sabelette",
