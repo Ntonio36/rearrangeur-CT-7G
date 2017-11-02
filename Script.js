@@ -18,7 +18,7 @@ function getWikicode(){
 				current = current.remove(/\{\{Poké\|.*?\|/);
 				current = current.toString().remove(/\}\}/).toString();
 				if(isForm){
-					current = current.replace("d'Alola","forme Alola");
+					current = current.replace("d'Alola","forme Alola").replace("Libegon","Libégon").replace("Monaflemit","Monaflèmit").replace("Morpheo","Morphéo").replace("M.Mime","M. Mime");
 				}
 				finalArray.push(current);
 			}
