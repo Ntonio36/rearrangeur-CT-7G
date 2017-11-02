@@ -8,17 +8,20 @@ function getWikicode(){
 		for(i = 0; i < split.length; i++){
 			var formFullName = "";
 			var current = split[i];
-			var formCode = current.match(/\d{3}(?:[a-z]{1}|)/).toString();
-			var isForm = false;
-			if(formCode.match(/[a-z]/)){
-				isForm = true;
+			if(current == "" || current.indexOf("{{Poké|") == -1) continue;
+			else {
+				var formCode = current.match(/\d{3}(?:[a-z]{1}|)/).toString();
+				var isForm = false;
+				if(formCode.match(/[a-z]/)){
+					isForm = true;
+				}
+				current = current.remove(/\{\{Poké\|.*?\|/);
+				current = current.toString().remove(/\}\}/).toString();
+				if(isForm){
+					current = current.replace("d'Alola","forme Alola");
+				}
+				finalArray.push(current);
 			}
-			current = current.remove(/\{\{Poké\|.*?\|/);
-			current = current.toString().remove(/\}\}/).toString();
-			if(isForm){
-				current = current.replace("d'Alola","forme Alola");
-			}
-			finalArray.push(current);
 		}
 	}
 	else if (usage == "translate"){
@@ -46,9 +49,11 @@ function getWikicode(){
 	}
 	else if(usage === "none"){
 		finalArray = [];
+		document.getElementById("base").value = "";
+		document.getElementById("result").value = "";
 	}
+	
 	document.getElementById("result").value = (finalArray.length?finalArray.join("/"):"");
-	document.getElementById("base").value = "";
 }
 
 String.prototype.remove = function(part){
