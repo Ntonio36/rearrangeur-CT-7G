@@ -436,9 +436,9 @@ var EnglishPokémon = {
 "Bastiodon" : "Bastiodon",
 "Burmy" : "Cheniti",
 "Wormadam" : "Cheniselle",
-"Wormadam-Sandy" : "Cheniselle forme s",
-"Wormadam-Trash" : "Cheniselle forme d",
-"Wormadam-Plant" : "Cheniselle forme p",
+"Wormadam-Sandy" : "Cheniselle|f-init=s|f-nom=Cape Sable",
+"Wormadam-Trash" : "Cheniselle|f-init=d|f-nom=Cape Déchet",
+"Wormadam-Plant" : "Cheniselle|f-init=p|f-nom=Cape Plante",
 "Mothim" : "Papilord",
 "Combee" : "Apitrini",
 "Vespiquen" : "Apireine",
@@ -829,5 +829,9 @@ var EnglishPokémon = {
 "Guzzlord" : "Engloutyran",
 "Necrozma" : "Necrozma",
 "Magearna" : "Magearna",
-"Marshadow" : "Marshadow"
+"Marshadow" : "Marshadow",
+"Poipole" : "Vémini",
+"Naganadel" : "Mandrillon",
+"Stakataka" : "Ama-Ama",
+"Blacephalon" : "Pierroteknik"
 };
