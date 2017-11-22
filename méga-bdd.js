@@ -828,26 +828,13 @@ var EnglishPokémon = {
 "Kartana" : "Katagami",
 "Guzzlord" : "Engloutyran",
 "Necrozma" : "Necrozma",
+"Necrozma-Dusk-Mane" : "Necrozma forme cc",
+"Necrozma-Dawn-Wings" : "Necrozma forme aa",
+"Necrozma-Ultra" : "Necrozma forme u",
 "Magearna" : "Magearna",
 "Marshadow" : "Marshadow",
+"Poipole" : "Vémini",
+"Naganadel" : "Mandrillon",
+"Stakataka" : "Ama-Ama",
+"Blacephalon" : "Pierroteknik",
 };
-
-Object.prototype.extend = function(obj){
-	var holder = this;
-	for(var toAdd in obj){
-		holder[toAdd] = obj[toAdd];
-		delete this[toAdd];
-	}
-	delete holder.extend;
-	return holder;
-};
-
-var EnglishPokémonUSUM = EnglishPokémon.extend({
-	"Poipole" : "Vémini",
-	"Naganadel" : "Mandrillon",
-	"Stakataka" : "Ama-Ama",
-	"Blacephalon" : "Pierroteknik",
-	"Necrozma-Dusk-Mane" : "Necrozma forme cc",
-	"Necrozma-Ultra" : "Necrozma forme u",
-	"Necrozma-Dawn-Wings" : "Necrozma forme aa"
-});
