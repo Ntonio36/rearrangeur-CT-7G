@@ -301,7 +301,7 @@ var EnglishPokémon = {
 "Taillow" : "Nirondelle",
 "Swellow" : "Hélédelle",
 "Wingull" : "Goélise",
-"Pelipper" : "Békipan",
+"Pelipper" : "Bekipan",
 "Ralts" : "Tarsal",
 "Kirlia" : "Kirlia",
 "Gardevoir" : "Gardevoir",
@@ -830,8 +830,21 @@ var EnglishPokémon = {
 "Necrozma" : "Necrozma",
 "Magearna" : "Magearna",
 "Marshadow" : "Marshadow",
-"Poipole" : "Vémini",
-"Naganadel" : "Mandrillon",
-"Stakataka" : "Ama-Ama",
-"Blacephalon" : "Pierroteknik"
 };
+
+Object.prototype.extend = function(obj){
+	var holder = this;
+	for(var toAdd in obj){
+		holder[toAdd] = obj[toAdd];
+		delete this[toAdd];
+	}
+	delete holder.extend;
+	return holder;
+};
+
+var EnglishPokémonUSUM = EnglishPokémon.extend({
+	"Poipole" : "Vémini",
+	"Naganadel" : "Mandrillon",
+	"Stakataka" : "Ama-Ama",
+	"Blacephalon" : "Pierroteknik"
+});
