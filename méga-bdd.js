@@ -846,5 +846,8 @@ var EnglishPokémonUSUM = EnglishPokémon.extend({
 	"Poipole" : "Vémini",
 	"Naganadel" : "Mandrillon",
 	"Stakataka" : "Ama-Ama",
-	"Blacephalon" : "Pierroteknik"
+	"Blacephalon" : "Pierroteknik",
+	"Necrozma-Dusk-Mane" : "Necrozma forme cc",
+	"Necrozma-Ultra" : "Necrozma forme u",
+	"Necrozma-Dawn-Wings" : "Necrozma forme aa"
 });
