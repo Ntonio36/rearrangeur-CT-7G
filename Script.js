@@ -36,31 +36,22 @@ function getWikicode(){
 		while(learnersList.indexOf("TM/HM") != -1){
 			learnersList.splice(0,1);
 		}
-		switch(true){
-			case document.getElementById("SL").checked :
-				var PokémonList = Object.keys(EnglishPokémon);
-			break;
-			case document.getElementById("USUL").checked :
-				var PokémonList = Object.keys(EnglishPokémonUSUM);
-			break;
-			default : "";
-		}
+		var PokéArray = Object.keys(EnglishPokémon).map(function(name){
+			return EnglishPokémon[name];
+		});
 		for(x = 0; x < learnersList.length; x++){
 			var currentRow = learnersList[x];
-			for(i = 0; i < PokémonList.length; i++){
-				var Name = PokémonList[i];
-				if (currentRow.indexOf(Name) != -1 && finalArray.indexOf(Name) == -1){
-					prepareArray[i] = EnglishPokémon[Name];
+			for(englishName in EnglishPokémon){
+				var nameMatched = currentRow.indexOf(englishName) != -1;
+				if(nameMatched && finalArray.indexOf(EnglishPokémon[englishName]) == -1){
+					finalArray.push(EnglishPokémon[englishName]);
 				}
-				else continue;
 			}
 		}
-		for(i = 0; i < prepareArray.length; i++){
-			if(prepareArray[i] != undefined){
-				finalArray.push(prepareArray[i]);
-			}
-			else continue;
-		}
+		var finalHolder = finalArray;
+		finalArray = finalHolder.sort(function(sorted, sorted2){
+			return PokéArray.indexOf(sorted) > PokéArray.indexOf(sorted2);
+		});
 	}
 	else if(usage === "none"){
 		finalArray = [];
@@ -102,4 +93,11 @@ Object.prototype.hide = function(){
 		nodes[i].checked = false;
 		nodes[i].value = "";
 	}
+};
+
+String.prototype.exists = function(){
+	if([undefined, null, false, ""].indexOf(this) == -1){
+		return true;
+	}
+	else return false;
 };
