@@ -36,15 +36,24 @@ function getWikicode(){
 		while(learnersList.indexOf("TM/HM") != -1){
 			learnersList.splice(0,1);
 		}
-		var PokéArray = Object.keys(EnglishPokémon).map(function(name){
-			return EnglishPokémon[name];
+		switch(document.querySelector("input[name='game']:checked").id){
+			case "SL" :
+				var PokémonList = EnglishPokémon;
+			break;
+			case "USUL" :
+				var PokémonList = EnglishPokémonUSUM;
+			break;
+			default : "";
+		}
+		var PokéArray = Object.keys(PokémonList).map(function(name){
+			return PokémonList[name];
 		});
 		for(x = 0; x < learnersList.length; x++){
 			var currentRow = learnersList[x];
-			for(englishName in EnglishPokémon){
+			for(englishName in PokémonList){
 				var nameMatched = currentRow.indexOf(englishName) != -1;
-				if(nameMatched && finalArray.indexOf(EnglishPokémon[englishName]) == -1){
-					finalArray.push(EnglishPokémon[englishName]);
+				if(nameMatched && finalArray.indexOf(PokémonList[englishName]) == -1){
+					finalArray.push(PokémonList[englishName]);
 				}
 			}
 		}
