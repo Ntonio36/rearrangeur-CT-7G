@@ -122,7 +122,7 @@ var EnglishPokémon = {
 "Kingler" : "Krabboss",
 "Voltorb" : "Voltorbe",
 "Electrode" : "Électrode",
-"Exeggcute" : "Nœunœuf",
+"Exeggcute" : "Noeunoeuf",
 "Exeggutor" : "Noadkoko",
 "Exeggutor-Alola" : "Noadkoko forme Alola",
 "Cubone" : "Osselait",
