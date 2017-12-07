@@ -5,7 +5,7 @@ function getWikicode(){
 	var finalNames = [];
 	if(usage == "convert"){
 		var strippedNumbers = input.match(/\d{3}(a|)/g);
-		var strippedNames = input.match(/[A-zéèâàÉúùê\-\.\']+(?=\}\})/g);
+		var strippedNames = input.match(/.+?(?=\}\})/g);
 		var toReplace = {
 			"Libegon" : "Libégon",
 			"Monaflemit" : "Monaflèmit",
