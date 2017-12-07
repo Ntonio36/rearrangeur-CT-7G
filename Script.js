@@ -14,6 +14,8 @@ function getWikicode(){
 			"Heledelle" : "Hélédelle",
 			"Insecateur" : "Insécateur",
 			"Nœunœuf" : "Noeunoeuf",
+			"Remoraid" : "Rémoraid",
+			"Skelenox" : "Skelénox"
 		};
 		finalNames = strippedNames.map(function(editedName){
 			var name = editedName;
