@@ -1,41 +1,33 @@
-function getWikicode(){
-	var finalArray = [];
+function getWikicode(){	
 	var prepareArray = [];
 	var usage = document.querySelector("input[type='radio']:checked").id || "";
 	var input = document.getElementById("base").value;
+	var finalNames = [];
 	if(usage == "convert"){
-		var split = input.split("\n");
-		for(i = 0; i < split.length; i++){
-			var formFullName = "";
-			var current = split[i];
-			if(current == "" || current.indexOf("{{Poké|") == -1) continue;
-			else {
-				var formCode = current.match(/\d{3}(?:[a-z]{1}|)/).toString();
-				var isForm = false;
-				if(formCode.match(/[a-z]/)){
-					isForm = true;
-				}
-				current = current.remove(/\{\{Poké\|.*?\|/);
-				current = current.toString().remove(/\}\}/).toString();
-				if(isForm){
-					var toReplace = ["Libegon","Monaflemit","Morpheo","M.Mime"];
-					var toInsert = ["Libégon","Monaflèmit","Morphéo","M. Mime"];
-					
-					for(i = 0; i < toReplace.length; i++){
-						if(current.indexOf(toReplace[i]) != -1){
-							current = current.replace(toReplace[i],toInsert[i]);
-						}
-					}
-				}
-				finalArray.push(current);
+		var strippedNumbers = input.match(/\d{3}(a|)/g);
+		var strippedNames = input.match(/[A-zéèâàúùê\.\']+(?=\}\})/g);
+		var toReplace = {
+			"Libegon" : "Libégon",
+			"Monaflemit" : "Monaflèmit",
+			"Morpheo" : "Morphéo",
+			"M.Mime" : "M. Mime",
+			"Heledelle" : "Hélédelle",
+			"Insecateur" : "Insécateur",
+			"Nœunœuf" : "Noeunoeuf",
+		};
+		finalNames = strippedNames.map(function(editedName){
+			var name = editedName;
+			if(toReplace[editedName]){
+				name = toReplace[editedName];
 			}
-		}
+			if(strippedNumbers[strippedNames.indexOf(editedName)].indexOf("a") != -1){ 
+			// Si l'index du numéro Dex qui correspond au Pokémon contient a
+				name += " forme Alola";
+			}
+			return name;
+		});
 	}
 	else if (usage == "translate"){
-		var learnersList = input.split("\n");
-		while(learnersList.indexOf("TM/HM") != -1){
-			learnersList.splice(0,1);
-		}
 		switch(document.querySelector("input[name='game']:checked").id){
 			case "SL" :
 				var PokémonList = EnglishPokémon;
@@ -45,30 +37,28 @@ function getWikicode(){
 			break;
 			default : "";
 		}
-		var PokéArray = Object.keys(PokémonList).map(function(name){
+		var EnglishNames = Object.keys(PokémonList);
+		var frenchNames = EnglishNames.map(function(name){
 			return PokémonList[name];
 		});
-		for(x = 0; x < learnersList.length; x++){
-			var currentRow = learnersList[x];
-			for(englishName in PokémonList){
-				var nameMatched = currentRow.indexOf(englishName) != -1;
-				if(nameMatched && finalArray.indexOf(PokémonList[englishName]) == -1){
-					finalArray.push(PokémonList[englishName]);
-				}
+		for(englishName in PokémonList){
+			var nameMatched = input.indexOf(englishName) != -1;
+			if(nameMatched && finalNames.indexOf(PokémonList[englishName]) == -1){
+				finalNames.push(PokémonList[englishName]);
 			}
 		}
-		var finalHolder = finalArray;
-		finalArray = finalHolder.sort(function(sorted, sorted2){
-			return PokéArray.indexOf(sorted) > PokéArray.indexOf(sorted2);
+		finalNames = finalNames.sort(function(poke, followingPoke){
+			return finalNames.indexOf(poke) > finalNames.indexOf(followingPoke);
 		});
 	}
 	else if(usage === "none"){
-		finalArray = [];
+		finalNames = [];
 		document.getElementById("base").value = "";
 		document.getElementById("result").value = "";
 	}
-	
-	document.getElementById("result").value = (finalArray.length?finalArray.join("/"):"");
+	if(finalNames.length){
+		document.getElementById("result").value = finalNames.join("/");
+	}
 }
 
 String.prototype.remove = function(part){
