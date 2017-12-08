@@ -5,7 +5,10 @@ function getWikicode(){
 	var finalNames = [];
 	if(usage == "convert"){
 		var strippedNumbers = input.match(/\d{3}(a|)/g);
-		var strippedNames = input.match(/.+?(?=\}\})/g);
+		var strippedNames = input.match(/\|[A-Z].+(?=\}\})/g).join().remove(/\|/g).split(",");
+		// En résumé, on tire le nom du Pokémon
+		// Avec la diversité des combinaisons de caractères dont sont formés les noms, il fallait bien être créatif pour pouvoir
+		// tous les prendre
 		var toReplace = {
 			"Libegon" : "Libégon",
 			"Monaflemit" : "Monaflèmit",
@@ -15,7 +18,8 @@ function getWikicode(){
 			"Insecateur" : "Insécateur",
 			"Nœunœuf" : "Noeunoeuf",
 			"Remoraid" : "Rémoraid",
-			"Skelenox" : "Skelénox"
+			"Skelenox" : "Skelénox",
+			"Meditikka" : "Méditikka"
 		};
 		finalNames = strippedNames.map(function(editedName){
 			var name = editedName;
@@ -23,7 +27,7 @@ function getWikicode(){
 				name = toReplace[editedName];
 			}
 			if(strippedNumbers[strippedNames.indexOf(editedName)].indexOf("a") != -1){ 
-			// Si l'index du numéro Dex qui correspond au Pokémon contient a
+			// Si le numéro Dex qui correspond au Pokémon contient a
 				name += " forme Alola";
 			}
 			return name;
