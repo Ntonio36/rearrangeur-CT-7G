@@ -19,7 +19,9 @@ function getWikicode(){
 			"Nœunœuf" : "Noeunoeuf",
 			"Remoraid" : "Rémoraid",
 			"Skelenox" : "Skelénox",
-			"Meditikka" : "Méditikka"
+			"Meditikka" : "Méditikka",
+			"Skélénox" : "Skelénox",
+			"Lumineon" : "Luminéon"
 		};
 		finalNames = strippedNames.map(function(editedName){
 			var name = editedName;
