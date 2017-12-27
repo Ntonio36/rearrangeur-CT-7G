@@ -30,7 +30,7 @@ function getWikicode(){
 			}
 			if(strippedNumbers[strippedNames.indexOf(editedName)].indexOf("a") != -1){ 
 			// Si le numéro Dex qui correspond au Pokémon contient a
-				name += " forme Alola";
+				name += " forme(a) nom(d'Alola) lien(" + name + " d'Alola)";
 			}
 			return name;
 		});
